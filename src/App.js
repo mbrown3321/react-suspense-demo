@@ -31,28 +31,22 @@ const App = () => {
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route path="/scores">
-            <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route path="/scores">
               <Scores />
-            </Suspense>
-          </Route>
-          <Route path="/about">
-            <Suspense fallback={<div>Loading...</div>}>
+            </Route>
+            <Route path="/about">
               <About />
-            </Suspense>
-          </Route>
-          <Route path="/users">
-            <Suspense fallback={<div>Loading...</div>}>
+            </Route>
+            <Route path="/users">
               <ActiveUsers />
-            </Suspense>
-          </Route>
-          <Route path="/">
-            <Suspense fallback={<div>Loading...</div>}>
+            </Route>
+            <Route path="/">
               <Home />
-            </Suspense>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   );
